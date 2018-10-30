@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://s.codepen.io/technakal/fullpage/YJbrMp?editors=0100 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+  <title>CodePen - Question Box</title>
+  
+  
+    <link rel="stylesheet" href="./normalize.min.css">
+
+  
+      <style>
+      * {
+  box-sizing: border-box;
+}
+
+.trivia-grid {
+  align-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 7px;
+  justify-content: center;
+  margin: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .trivia-grid {
+    grid-template-columns: 1fr;
+  }  
+}
+
+.trivia-border {
+  background: #7574fc;
+  border: 2px solid black;
+  grid-column: 1 / 2;
+  height: 200px;
+  padding: 15px;
+}
+
+.trivia-box {
+  background: #7574fc;
+  border: 1px solid black;
+  box-shadow: 0 6px 8px rgba(0,0,0,0.19), 0 7px 8px 4px rgba(0,0,0,0.23);
+  height: 100%;
+  width: 100%;
+}
+
+
+    </style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no">
+
+  <div class="trivia-grid">
+  <div class="trivia-border">
+    <div class="trivia-box"></div>
+  </div>
+</div>
+  
+  
+  
+  
+  
+
+  <script src="./css_reload-2a5c7ad0fe826f66e054c6020c99c1e1c63210256b6ba07eb41d7a4cb0d0adab.js.download"></script>
+
+
+
+ 
+</body></html>

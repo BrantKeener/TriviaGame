@@ -4,7 +4,7 @@ body {
 }
 
 .background_image {
-    background-image: url("../images/drag_bus.jpg");
+    background-image: url("../images/trivia_background.jpg");
     background-size: 100% 100%;
     height: 750px;
 }
@@ -47,4 +47,27 @@ body {
     margin: 0%;
 }
 
+.button_area {
+    display: grid;
+    grid-template-columns: 5fr 1fr 5fr;
+}
 
+
+#red {
+    display: grid;
+    justify-content: right;
+}
+
+#blue {
+    display: grid;
+    justify-content: center;
+}
+
+#yellow {
+    display: grid;
+    justify-content: left;
+}
+
+.choice_buttons {
+    width: 60%;
+}

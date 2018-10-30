@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://codepen.io/technakal/live/YJbrMp?editors=0100 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+
+  <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="NLkV11txT2GYZtVKx4EJ/BQbYuc1J0B4eIp30tAl+1ZxLazVvXZij/kIEeJJYhS8YY6wKFnwQTPzdERoVxk8vA==">
+  
+
+
+  <title>Question Box Live Preview</title>
+
+    <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@CodePen">
+  <meta name="twitter:title" content="Question Box">
+  <meta name="twitter:description" content="...">
+  <meta name="twitter:image" content="https://s3-us-west-2.amazonaws.com/i.cdpn.io/243805.YJbrMp.d0370fb2-44ed-45a9-8093-a71d15b90d50.png">
+    <meta name="twitter:creator" content="http://www.twitter.com/technakal">
+
+  <meta property="og:image" content="https://codepen.io/technakal/pen/YJbrMp/image/large.png" itemprop="thumbnailUrl">
+  <meta property="og:title" content="Question Box">
+  <meta property="og:url" content="https://codepen.io/technakal/details/YJbrMp">
+  <meta property="og:site_name" content="CodePen">
+  <meta property="og:description" content="...">
+
+
+  <style>
+    html, body {
+      overflow: hidden;
+    }
+    html, body, #result_div, #result_div .result-iframe {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+    html.ios #result_div {
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="result_div">
+    <iframe id="result" class="result-iframe" src="./Question_Box_files/YJbrMp.html" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts" allow="geolocation; microphone; camera; midi; vr" scrolling="auto" allowtransparency="true" allowpaymentrequest="true" allowfullscreen="true"></iframe>
+  </div>
+
+  <input type="hidden" id="init-data" value="{&quot;__browser&quot;:{&quot;device&quot;:&quot;unknown&quot;,&quot;name&quot;:&quot;chrome&quot;,&quot;platform&quot;:&quot;pc&quot;,&quot;version&quot;:&quot;70&quot;},&quot;__analytics&quot;:{&quot;enabled&quot;:true,&quot;pageId&quot;:&quot;live_fullpage:show&quot;},&quot;__remote_addr&quot;:&quot;184.96.245.62&quot;,&quot;__cookieUsed&quot;:false,&quot;__CPDATA&quot;:{&quot;domain&quot;:&quot;https://codepen.io&quot;,&quot;domain_iframe&quot;:&quot;https://s.codepen.io&quot;,&quot;host&quot;:&quot;codepen.io&quot;,&quot;asset_host&quot;:&quot;static.codepen.io&quot;,&quot;embed_asset_host&quot;:&quot;static.codepen.io&quot;,&quot;host_secure_subdomain&quot;:&quot;s.&quot;,&quot;iframe_sandbox&quot;:&quot;allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts&quot;,&quot;iframe_allow&quot;:&quot;geolocation; microphone; camera; midi; vr&quot;},&quot;__env&quot;:&quot;production&quot;,&quot;__mobile&quot;:false,&quot;__turnOffJS&quot;:false,&quot;__user&quot;:{&quot;anon&quot;:true,&quot;base_url&quot;:&quot;/anon/&quot;,&quot;current_team_id&quot;:0,&quot;hashid&quot;:&quot;VoDkNZ&quot;,&quot;id&quot;:1,&quot;itemType&quot;:&quot;user&quot;,&quot;name&quot;:&quot;Captain Anonymous&quot;,&quot;owner_id&quot;:&quot;VoDkNZYdEzGn&quot;,&quot;paid&quot;:false,&quot;session_hash&quot;:&quot;&quot;,&quot;tier&quot;:0,&quot;username&quot;:&quot;anon&quot;},&quot;__firestore&quot;:{&quot;config&quot;:{&quot;apiKey&quot;:&quot;AIzaSyBgLAe7N_MdFpuVofMkcQLGwwhUu5tuxls&quot;,&quot;authDomain&quot;:&quot;codepen-store-production.firebaseapp.com&quot;,&quot;databaseURL&quot;:&quot;https://codepen-store-production.firebaseio.com&quot;,&quot;projectId&quot;:&quot;codepen-store-production&quot;},&quot;token&quot;:&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJodHRwczovL2lkZW50aXR5dG9vbGtpdC5nb29nbGVhcGlzLmNvbS9nb29nbGUuaWRlbnRpdHkuaWRlbnRpdHl0b29sa2l0LnYxLklkZW50aXR5VG9vbGtpdCIsImNsYWltcyI6eyJvd25lcklkIjoiVm9Ea05aWWRFekduIiwiYWRtaW4iOmZhbHNlfSwiZXhwIjoxNTQwOTIxOTE1LCJpYXQiOjE1NDA5MTgzMTUsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLThva3lsQGNvZGVwZW4tc3RvcmUtcHJvZHVjdGlvbi5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsInN1YiI6ImZpcmViYXNlLWFkbWluc2RrLThva3lsQGNvZGVwZW4tc3RvcmUtcHJvZHVjdGlvbi5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsInVpZCI6IlZvRGtOWiJ9.DmmIqeLZwIBNSyYCM_t3TC5GxK-F9PhOVUrFi_pL5K2WtM0H7PZdoUfly3fszImUBqV0USEWN2RuA-x7on3tUcjjegIKQlHPB9wpO_UAza-282aAzzpKQnaGrH60P7ZG6UofSO8-XreOA0PVE1Azelb2lFBLKOhQLnyolEcW_tfWHQl2HPDsgQCLQ_yFdezV97G4I-KHAu7SozqA9KR89wF9ufa0b3_Z5tw2gVWal5J5J_a9c9XhRmhPPgCcchUT7yv1-S2wIAiDkEbD1YeVEwWH4g8_1j3EZm3Sbic02io_tVfHZNdSKoowjoUWXrDsSZEjPO1pt665X5h9_dto8Q&quot;},&quot;__item&quot;:&quot;{\&quot;id\&quot;:29557515,\&quot;user_id\&quot;:243805,\&quot;html\&quot;:\&quot;&lt;div class=\\\&quot;trivia-grid\\\&quot;&gt;\\n  &lt;div class=\\\&quot;trivia-border\\\&quot;&gt;\\n    &lt;div class=\\\&quot;trivia-box\\\&quot;&gt;&lt;\\/div&gt;\\n  &lt;\\/div&gt;\\n&lt;\\/div&gt;\&quot;,\&quot;css\&quot;:\&quot;* {\\n  box-sizing: border-box;\\n}\\n\\n.trivia-grid {\\n  align-content: center;\\n  display: grid;\\n  grid-template-columns: repeat(3, 1fr);\\n  grid-gap: 7px;\\n  justify-content: center;\\n  margin: 1rem;\\n}\\n\\n@media screen and (max-width: 600px) {\\n  .trivia-grid {\\n    grid-template-columns: 1fr;\\n  }  \\n}\\n\\n.trivia-border {\\n  background: #7574fc;\\n  border: 2px solid black;\\n  grid-column: 1 \\/ 2;\\n  height: 200px;\\n  padding: 15px;\\n}\\n\\n.trivia-box {\\n  background: #7574fc;\\n  border: 1px solid black;\\n  box-shadow: 0 6px 8px rgba(0,0,0,0.19), 0 7px 8px 4px rgba(0,0,0,0.23);\\n  height: 100%;\\n  width: 100%;\\n}\\n\\n\&quot;,\&quot;parent\&quot;:0,\&quot;js\&quot;:\&quot;\&quot;,\&quot;html_pre_processor\&quot;:\&quot;none\&quot;,\&quot;css_pre_processor\&quot;:\&quot;none\&quot;,\&quot;js_pre_processor\&quot;:\&quot;babel\&quot;,\&quot;html_classes\&quot;:\&quot;\&quot;,\&quot;css_starter\&quot;:\&quot;normalize\&quot;,\&quot;css_prefix_free\&quot;:null,\&quot;css_external\&quot;:null,\&quot;js_library\&quot;:null,\&quot;js_modernizr\&quot;:null,\&quot;js_external\&quot;:null,\&quot;created_at\&quot;:\&quot;2018-10-30T11:23:35.000Z\&quot;,\&quot;updated_at\&quot;:\&quot;2018-10-30T11:33:44.000Z\&quot;,\&quot;session_hash\&quot;:\&quot;0bbcee3c831128b9c11a9b07855c2289\&quot;,\&quot;title\&quot;:\&quot;Question Box\&quot;,\&quot;description\&quot;:\&quot;\&quot;,\&quot;slug_hash\&quot;:\&quot;YJbrMp\&quot;,\&quot;head\&quot;:\&quot;\&quot;,\&quot;private\&quot;:false,\&quot;slug_hash_private\&quot;:\&quot;09da8764d87c6f5183032f38ffec1561\&quot;,\&quot;has_animation\&quot;:false,\&quot;css_pre_processor_lib\&quot;:\&quot;\&quot;,\&quot;checksum\&quot;:0,\&quot;screenshot_uuid\&quot;:\&quot;d0370fb2-44ed-45a9-8093-a71d15b90d50\&quot;,\&quot;team_id\&quot;:0,\&quot;css_prefix\&quot;:\&quot;autoprefixer\&quot;,\&quot;template\&quot;:false,\&quot;js_module\&quot;:false,\&quot;hashid\&quot;:\&quot;YJbrMp\&quot;,\&quot;owner_id\&quot;:\&quot;ZnNyPYYdEzGn\&quot;}&quot;}">
+
+    <script src="./Question_Box_files/common-vendors-6cece0cccc49cdfb388e.js.download"></script>
+    <script src="./Question_Box_files/everypage-e10c8936050a9f36d254.js.download"></script>
+
+  <script src="./Question_Box_files/liveViewObserver-de293a888b8041830053831af815930dabe2f75ae210e9bb0ff4336cbc27b04a.js.download"></script>
+
+
+
+</body></html>
