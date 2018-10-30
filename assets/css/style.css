@@ -11,7 +11,7 @@ body {
 
 .content {
     display: grid;
-    grid-template-rows: 2fr 2fr 1fr 1fr;
+    grid-template-rows: 2fr 2fr 1.3fr 1fr;
 }
 
 .trivia_row_one, .trivia_row_two {
@@ -49,25 +49,59 @@ body {
 
 .button_area {
     display: grid;
-    grid-template-columns: 5fr 1fr 5fr;
+    grid-template-columns: 5.5fr 1fr 1fr 1fr 5fr;
 }
 
 
 #red {
-    display: grid;
+    padding-top: 50%;
+    display: grid;    
     justify-content: right;
 }
 
-#blue {
-    display: grid;
-    justify-content: center;
-}
-
 #yellow {
-    display: grid;
+    padding-top: 50%;
+    display: grid;    
     justify-content: left;
 }
 
+#blue {
+    padding-top: 50%;
+    display: grid;    
+    justify-content: center;
+}
+
 .choice_buttons {
-    width: 60%;
+    display: block;
+    width: 40%;
+}
+
+.questLab1, .questLab2, .questLab3, .questLab4, .questLab5 {
+    color: white;
+    position: absolute;
+}
+
+.questLab1 {
+    top: 10%;
+    left: 24%;
+}
+
+.questLab2 {
+    top: 10%;
+    left: 48%;
+}
+
+.questLab3 {
+    top: 10%;
+    left: 71%;
+}
+
+.questLab4 {
+    top: 39%;
+    left: 30%;
+}
+
+.questLab5 {
+    top: 39%;
+    left: 65%;
 }

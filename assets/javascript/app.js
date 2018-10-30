@@ -34,6 +34,8 @@ $(document).ready(function() {
 
     $('.trivia_boxes').click(function(){
         growBoxStart(event.target.id);
+        questionLabelRemove(event.target.id);
+        questionLabelMove(event.target.id);
     });
     
     function growBoxStart(e){
@@ -53,15 +55,69 @@ $(document).ready(function() {
     };
 
     function populateQCards() {
-        for(let i = 1; i < triviaQuestions.length + 1; i++){
-            $('#box' + i).text('Question 1');
+        for(let i = 1; i < 6; i++) {
+            let classBuilder = 'questLab' + i;
+            let labelBuilder = 'Question' + i;
+            $('#q' + i).append('<p class=' + classBuilder + '>' + labelBuilder + '</p>');
         };
     };
 
     populateQCards();
 
+    function questionLabelMove(e) {
+        switch(e) {
+            case 'box2' :
+                $('.questLab2').addClass('questLab1')
+                $('.questLab2').removeClass('questLab2')
+                break;
+            case 'box3' :
+                $('.questLab3').addClass('questLab1')
+                $('.questLab3').removeClass('questLab3')
+                break;
+            case 'box4' :
+                $('.questLab4').addClass('questLab1')
+                $('.questLab4').removeClass('questLab4')
+                break;
+            case 'box5' :
+                $('.questLab5').addClass('questLab1')
+                $('.questLab5').removeClass('questLab5')
+                break;
+        };
+    };
 
-
-
+    function questionLabelRemove(e) {
+        switch(e) {
+            case 'box1' :
+                $('.questLab2').remove();
+                $('.questLab3').remove();
+                $('.questLab4').remove();
+                $('.questLab5').remove();
+                break;
+            case 'box2' :
+                $('.questLab1').remove();
+                $('.questLab3').remove();
+                $('.questLab4').remove();
+                $('.questLab5').remove();
+                break;
+            case 'box3' :
+                $('.questLab1').remove();
+                $('.questLab2').remove();
+                $('.questLab4').remove();
+                $('.questLab5').remove();
+                break;
+            case 'box4' :
+                $('.questLab1').remove();
+                $('.questLab2').remove();
+                $('.questLab3').remove();
+                $('.questLab5').remove();
+                break;
+            case 'box5' :
+                $('.questLab1').remove();
+                $('.questLab2').remove();
+                $('.questLab3').remove();
+                $('.questLab4').remove();
+                break;
+        };
+    };
 
 });
