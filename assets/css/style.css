@@ -49,26 +49,26 @@ body {
 
 .button_area {
     display: grid;
-    grid-template-columns: 5.5fr 1fr 1fr 1fr 5fr;
+    grid-template-columns: 5fr 1fr 1fr 1fr 5fr;
 }
 
 
 #red {
     padding-top: 50%;
     display: grid;    
-    justify-content: right;
+    justify-items: right;
 }
 
 #yellow {
     padding-top: 50%;
     display: grid;    
-    justify-content: left;
+    justify-items: left;
 }
 
 #blue {
     padding-top: 50%;
     display: grid;    
-    justify-content: center;
+    justify-items: center;
 }
 
 .choice_buttons {
@@ -77,8 +77,9 @@ body {
 }
 
 .questLab1, .questLab2, .questLab3, .questLab4, .questLab5 {
-    color: white;
     position: absolute;
+    color: white;
+    font-size: 1.5rem;
 }
 
 .questLab1 {
@@ -104,4 +105,16 @@ body {
 .questLab5 {
     top: 39%;
     left: 65%;
+}
+
+.score {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 2%;
+    align-content: center;
+    justify-items: center;
+    color: white;
+    font-size: 1.5rem;
+    background-color: rgba(0,0,0, .75);
+    width: 100%;
 }
