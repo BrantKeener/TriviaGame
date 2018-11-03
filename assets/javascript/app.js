@@ -46,19 +46,8 @@ let timerRunning = false;
 
 $(document).ready(function() {
 
-    function fullReset() {
-        $('.correct').text('Correct Answers: 0');
-        $('.incorrect').text('Incorrect Answers: 0');
-        totalAnswers = 0;
-        corrects = 0;
-        incorrects = 0;
-        question = "";
-        
-        triviaBoxClickSet();
-        populateQCards();
-    };
-
     function midGameReset() {
+        setTimeout(boxClear, 3000);
         question = "";
         growingHeight = 150;
         growingWidth = 235;
@@ -85,7 +74,6 @@ $(document).ready(function() {
     $('.choice_buttons').click(function() {
         timerControl();
         checkButton(event.target.id);
-        setTimeout(boxClear, 3000);
     });
 
     function growBoxStart(e){
