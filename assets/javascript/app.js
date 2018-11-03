@@ -37,21 +37,40 @@ let growingWidth = 235;
 let question = "";
 let corrects = 0;
 let incorrects = 0;
+let totalAnswers = 0;
 let boxIDs = ['box1', 'box2', 'box3', 'box4', 'box5'];
 let qDivs = ['q1', 'q2', 'q3', 'q4', 'q5'];
+let timerGo = "";
+let grower = '';
+let timerRunning = false;
 
 $(document).ready(function() {
 
     function fullReset() {
+        $('.correct').text('Correct Answers: 0');
+        $('.incorrect').text('Incorrect Answers: 0');
+        totalAnswers = 0;
         corrects = 0;
         incorrects = 0;
         question = "";
-    }
+        
+        triviaBoxClickSet();
+        populateQCards();
+    };
 
     function midGameReset() {
         question = "";
         growingHeight = 150;
         growingWidth = 235;
+        if(totalAnswers === 4) {
+            if(corrects > incorrects) { 
+                alert("You've Won!");
+                location.reload();
+            } else {
+                alert("You've Lost!");
+                location.reload();
+            };
+        };
     };
     
     function triviaBoxClickSet() {
@@ -59,27 +78,41 @@ $(document).ready(function() {
             growBoxStart(event.target.id);
             questionLabelRemove(event.target.id);
             questionLabelMove(event.target.id);
+            timerControl();
         });
     };
     
     $('.choice_buttons').click(function() {
+        timerControl();
         checkButton(event.target.id);
-        setTimeout(boxClear, 5000);
+        setTimeout(boxClear, 3000);
     });
 
     function growBoxStart(e){
         $('#' + e).addClass('selectedTrivia');
         $('.selectedTrivia').css({'position':'absolute', 'top':'10px', 'left':'230px'});
-        setInterval(boxGrow, 5);
+        growBoxInterval();
     };
-    
+
+    function growBoxInterval(e) {
+        if(e === undefined) {
+            grower = setInterval(boxGrow, 5);
+        } else {
+            clearInterval(grower);
+            grower = '';
+        };
+    };
+
     function boxGrow(){
         if(growingHeight < 451){
             $('.selectedTrivia').css({'height': growingHeight + 'px'});
+        } else {
+            growBoxInterval(1);
         };
         if(growingWidth < 1076){
             $('.selectedTrivia').css({'width':growingWidth + 'px'});
         };
+        console.log('running!');
         growingHeight += 3;
         growingWidth += 10;
     };
@@ -226,7 +259,7 @@ $(document).ready(function() {
         for(let i = 2; i < 5; i++) {
             if(answerText[i].innerHTML !== triviaQuestions[question].correctAnswer) {
                 $(answerText[i]).css({'color' : 'red', 'opacity' : '0.2'});
-            }
+            };
         };
     };
 
@@ -241,7 +274,54 @@ $(document).ready(function() {
             let imageGrab = document.getElementsByTagName('img')
             imageGrab[i].setAttribute('id', 'box' + (i + 1));
         };
+        totalAnswers += 1;
         populateQCards();
+        triviaBoxClickSet();
     };
+
     triviaBoxClickSet();
+
+    // Insert function to control timer
+
+    function timerControl() {
+        
+        let timerStart = "";
+       
+        if(timerRunning === false) {
+            console.log('Start!');
+            startTiming();
+        } else {
+            console.log('stop!');
+            stopTiming();
+        };
+
+        function startTiming() {
+            timerStart = 10;
+            timerGo = setInterval(timerDisplay, 1000);
+            timerRunning = true;
+        };
+
+        function stopTiming() {
+            clearInterval(timerGo);
+            timerRunning = false;
+        };
+
+        function timerDisplay() {
+            $('.timer').text('Time Left: ' + timerStart);
+            timerStart -= 1;
+            let timerText = $('.timer');
+            let innerText = timerText[0].innerHTML;
+            timeUp(innerText);
+        };
+    };
+
+    function timeUp(e) {
+        console.log(e.charAt(11));
+        if(e.charAt(11) === '0') {
+            timerControl();
+            let incorrectSound = new Audio('assets/sounds/Wrong-answer-sound-effect.mp3');
+            incorrectSound.play();
+            incorrectAnswerIncrease();
+        };
+    };
 });
